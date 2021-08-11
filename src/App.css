@@ -1,31 +1,155 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 25vmin;
   pointer-events: none;
+
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+
   }
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 20px;
+  padding-top: 60px;
+}
+
+#letsPlay{
+  color: #61dafb;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.card-col {
+  /*below specifies the duration of the animation - 20 seconds*/
+  animation: bgcolor infinite 20s;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card-row {
+  padding-top: 20px;
+  background-color: #282c34;
+}
+
+.card-container :hover {
+  background-color: #282c34;
+  box-shadow: rgba(45, 159, 163, 0.432) 0px 7px 20px;
+}
+
+.card-container {
+  height: 140px;
+  width: 130px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  perspective: 1000px;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  margin-left: 80px;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  backface-visibility: hidden;
+  box-shadow: rgba(42, 47, 48, 0.582) 0px 5px 20px;
+  cursor: pointer;
+  display:none;
+}
+
+.card{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  background-color: #9e9e9e;
+  perspective: 1000px;
+  transform-origin: center right;
+  cursor: pointer;
+}
+
+
+.img-emo {
+  height: 140px;
+  width: 130px;
+  position: absolute;
+  border-radius: 5px;
+  transform-origin: center right;
+  margin-left: -75px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.card.is-flipped,
+.img-emo.is-flipped
+{
+  transform: translateX(-100%) rotateY(180deg);
+  transition: 0.8s;
+}
+
+.card.stay-Flipped,
+.img-emo.stay-Flipped
+{
+  filter: brightness(60%);
+  transition: 1s;
+}
+
+
+.helpModal{
+  color: #282c34;;
+  padding: 20px;
+}
+
+.me-2{
+  margin-left: 1155px;
+  position: relative;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  border-color: #282c34;
+}
+
+.navi{
+  position: fixed;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 70px;
+  background-color: #282c34;
+  box-shadow: #3b414d 0px 0px 20px;;
+}
+
+.timer {
+  color:whitesmoke;
+  font-weight: bold;
+  display:none;
+  margin-right: auto;
+  margin-left: -110px;
+  position: relative;
+}
+
+#time {
+  color: red;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +160,36 @@
     transform: rotate(360deg);
   }
 }
+
+
+/*the below properties for the background color determine that
+at each stage of animation's progression(%) the color it will
+transition to*/
+@keyframes bgcolor {
+  0% {
+      background: #23c503;
+
+  }
+
+  20% {
+      background: #f5e504;
+  }
+
+  40% {
+      background: #00d9ff;
+  }
+
+  60% {
+      background: #c305ed;
+  }
+
+  80% {
+      background: #848385;
+  }
+
+  100% {
+      background: #23c503;
+  }
+
+}
+
